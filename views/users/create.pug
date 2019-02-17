@@ -1,0 +1,10 @@
+extends ../layouts/common
+
+block content
+    h2 Create User
+    form(action="/users/create", method="POST")
+      label(for="name") Name
+      input#name(type="text", placeholder="Name", name="name", class="form-control mb-3 w-50")
+      label(for="name") Phone
+      input#phone(type="text", placeholder="Phone", name="phone", class="form-control mb-2 w-50")
+      button(class="btn btn-primary", type='submit') Create

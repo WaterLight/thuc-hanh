@@ -1,0 +1,15 @@
+extends ../layouts/common
+
+block content
+  h2.my-3 Products
+  .row
+    each product in products
+      .card(class="col-sm-3 mb-3")
+        img.card-img-top(src= product.image, alt='Card image cap')
+        .card-body
+          h5.card-title= product.title
+          p.card-text= product.description
+          h5.card-title= product.price
+          a.btn.btn-primary(href='/cart/'+ product._id) Add to cart
+      
+    

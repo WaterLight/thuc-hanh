@@ -1,0 +1,22 @@
+extends ../layouts/common
+
+block content
+  .d-flex.mt-3
+    h2 Users
+    a(class="btn btn-primary mb-3 ml-2", href="/users/create") Create
+    form(action="/users/search", method="GET", class="d-flex ml-auto")
+      input(type="text", class="form-control mr-3", placeholder="Search", name="q", value=q)
+      button(class="btn btn-primary", type='submit') Search
+  table.table
+    tr
+      th Name
+      th Phone
+      th Position
+      th Info
+    each user in users
+      tr
+        td= user.name
+        td= user.phone
+        td
+        td
+          a(class="btn btn-light", href='/users/'+ user.id) Info
